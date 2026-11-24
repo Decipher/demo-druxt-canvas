@@ -28,10 +28,20 @@ NODE_OPTIONS=--openssl-legacy-provider npm start
 
 - `/` and `/canvas-external` are Canvas pages. Druxt Router finds them by
   path, and the site has no Nuxt page of its own.
-- `components/` holds a wrapper for each Canvas component those pages use.
-  `DruxtCanvasSdcDashiThemeHeading` renders Dashi's heading.
+- The header and footer are Dashi's Canvas page variant, which
+  `layouts/default.vue` renders through the same wrappers as a page.
+- `components/` holds a wrapper for each Canvas component and view those
+  pages use. Each one writes the markup Dashi's own template writes, so
+  Dashi's CSS styles it. `DruxtCanvasSdcDashiThemeHeading` renders Dashi's
+  heading, and `DruxtViewRecipesLatest` its latest recipes.
 - The recipes and articles the front page links to are nodes, rendered
   through Druxt Entity.
+
+Dashi shows its recipes and articles through Canvas content templates, which
+Druxt doesn't read yet. So the card, hero and node page wrappers read each
+node's fields themselves. Two of Dashi's views, related recipes and more
+featured articles, answer JSON:API with an error on Dashi's own Drupal, so
+those pages leave them out.
 
 ## Point it at a real Drupal
 
@@ -52,3 +62,9 @@ describes.
 The wrappers here are for Dashi's components. A site built from another
 template needs wrappers for its own, and `nuxt dev` names the ones it looks
 for on each component that has none.
+
+## Licence
+
+GPL-2.0-or-later. `static/dashi/` holds the Dashi theme's CSS, fonts, logo and
+images, copied from the theme under its own licence, GPL-2.0-or-later. Lora,
+its heading font, is under the SIL Open Font License.

@@ -1,0 +1,59 @@
+/**
+ * @file theme.css
+ * shadcn/ui-compatible theme variables for the Dashi theme.
+ *
+ * You can customize these values without rebuilding the compiled CSS.
+ * Tools like https://tweakcn.com can help generate these values. Copy this
+ * file to your web root, so it sits next to index.php, and clear Drupal's
+ * cache. Then, any changes you make in this file should be reflected right away.
+ */
+
+:root {
+  --background: oklch(0.9499 0.0227 78.218); /* cream #f7edde */
+  --foreground: oklch(0.32 0.0202 67); /* ink #3a3128 */
+  --card: oklch(1 0 0); /* white surfaces */
+  --card-foreground: oklch(0.32 0.0202 67);
+  --primary: oklch(0.5509 0.1996 33.699); /* brand red #cc2d00 */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.5166 0.0931 181.08); /* teal #00796b */
+  --secondary-foreground: oklch(1 0 0);
+  --primary-deep: oklch(0.531 0.1996 33.699); /* #c52400, a darker red for small labels on the gray background */
+  --secondary-deep: oklch(0.497 0.0931 181.08); /* #007365, a darker teal, same use */
+  --muted: oklch(0.9285 0.0239 79.739); /* #f0e6d6 */
+  --muted-foreground: oklch(0.51 0.034 76.746); /* #716450, a bit darker than the design's gray so small text stays readable on cream */
+  --accent: oklch(0.9516 0.013 185.091); /* teal tint */
+  --accent-foreground: oklch(0.5166 0.0931 181.08);
+  --destructive: oklch(0.6368 0.2078 25.3313);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.8881 0.0237 82.117);
+  --input: oklch(0.8881 0.0237 82.117);
+  --ring: oklch(0.5166 0.0931 181.08); /* focus ring, the teal */
+  --font-sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --font-serif: "Lora", Georgia, "Times New Roman", serif;
+  --font-mono: "Fira Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
+  --font-body: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --radius: 1rem;
+  --shadow-x: 0;
+  --shadow-y: 1px;
+  --shadow-blur: 3px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.1;
+  --shadow-color: oklch(0.3839 0.061 64.205); /* warm brown #5a3c1e */
+  --shadow-2xs: 0 1px 3px 1px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0 1px 3px rgba(90, 60, 30, 0.06);
+  --shadow-sm: 0 4px 12px rgba(90, 60, 30, 0.08);
+  --shadow: 0 8px 24px rgba(90, 60, 30, 0.08); /* cards */
+  --shadow-md: 0 8px 24px rgba(90, 60, 30, 0.1);
+  --shadow-lg: 0 18px 40px rgba(90, 60, 30, 0.18); /* hero photos */
+  --shadow-xl: 0 24px 50px rgba(90, 60, 30, 0.25);
+  --shadow-2xl: 0 1px 3px 1px hsl(0 0% 0% / 0.1), 0 16px 18px -3px hsl(0 0% 0% / 0.1);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  /* Set navbar height for hero billboard overlay */
+  --navbar-height: calc(var(--spacing) * 15);
+
+  @media (min-width: 768px) {
+    --navbar-height: calc(var(--spacing) * 18);
+  }
+}
