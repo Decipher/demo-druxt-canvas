@@ -1,5 +1,7 @@
 <template>
-  <DruxtView :view-id="viewId" :display-id="displayId" />
+  <div class="container mx-auto px-4 pb-6 text-muted-foreground">
+    <DruxtView :view-id="viewId" :display-id="displayId" />
+  </div>
 </template>
 
 <script>
