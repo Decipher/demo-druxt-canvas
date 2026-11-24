@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { bundleLabel, difficulty, featuredMedia, nodePath, viewLabel } from '../lib/dashi'
+import { bundleLabel, difficulty, featuredMedia, nodePath, viewLabel } from '~/lib/dashi'
 
 // Dashi's card, as its featured and card content templates render a node.
 export default {

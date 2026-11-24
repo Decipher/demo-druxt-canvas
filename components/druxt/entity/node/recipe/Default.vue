@@ -67,7 +67,7 @@
 
 <script>
 import { DruxtEntityMixin } from 'druxt-entity'
-import { difficulty, featuredMedia } from '../lib/dashi'
+import { difficulty, featuredMedia } from '~/lib/dashi'
 
 // A recipe's own page, as Dashi's recipe content template lays it out. Druxt
 // does not read Canvas content templates yet, so this wrapper reads the

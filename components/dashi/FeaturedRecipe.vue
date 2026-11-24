@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { difficulty, featuredMedia, nodePath, viewLabel } from '../lib/dashi'
+import { difficulty, featuredMedia, nodePath, viewLabel } from '~/lib/dashi'
 
 // Dashi's featured recipe, as its hero content template renders a recipe.
 export default {

@@ -44,7 +44,7 @@
 
 <script>
 import { DruxtEntityMixin } from 'druxt-entity'
-import { featuredMedia } from '../lib/dashi'
+import { featuredMedia } from '~/lib/dashi'
 
 const ordinal = (day) => `${day}${[, 'st', 'nd', 'rd'][(day % 100 >> 3) ^ 1 && day % 10] || 'th'}`
 

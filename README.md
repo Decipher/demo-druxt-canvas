@@ -30,10 +30,14 @@ NODE_OPTIONS=--openssl-legacy-provider npm start
   path, and the site has no Nuxt page of its own.
 - The header and footer are Dashi's Canvas page variant, which
   `layouts/default.vue` renders through the same wrappers as a page.
-- `components/` holds a wrapper for each Canvas component and view those
-  pages use. Each one writes the markup Dashi's own template writes, so
-  Dashi's CSS styles it. `DruxtCanvasSdcDashiThemeHeading` renders Dashi's
-  heading, and `DruxtViewRecipesLatest` its latest recipes.
+- `components/druxt/` holds a wrapper for each Canvas component, view, menu
+  and entity those pages use. Each one writes the markup Dashi's own template
+  writes, so Dashi's CSS styles it. Its path is its name, as Druxt names
+  wrappers: `druxt/canvas/sdc/dashi-theme/Heading.vue` is
+  `DruxtCanvasSdcDashiThemeHeading`, Dashi's heading, and
+  `druxt/view/recipes/Latest.vue` is `DruxtViewRecipesLatest`, its latest
+  recipes. `components/dashi/` holds the parts they share, such as Dashi's
+  card.
 - The recipes and articles the front page links to are nodes, rendered
   through Druxt Entity.
 
