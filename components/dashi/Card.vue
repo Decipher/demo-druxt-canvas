@@ -5,7 +5,7 @@
     </div>
     <div :class="['flex w-full flex-col items-baseline rounded-b p-5', variant === 'featured' ? '' : 'px-0!']">
       <div class="@container flex w-full flex-col gap-1 md:gap-2">
-        <div v-if="variant === 'featured'" class="flex w-full items-center justify-between gap-2">
+        <div v-if="variant === 'featured' && withLabel" class="flex w-full items-center justify-between gap-2">
           <span class="text-[0.7rem] font-bold tracking-[0.1em] uppercase card--label text-secondary">{{ label }}</span>
         </div>
         <h3 :class="['text-lg leading-snug font-semibold', variant === 'featured' ? '@md:text-xl' : '']">
@@ -28,6 +28,8 @@ export default {
   props: {
     node: { type: Object, required: true },
     variant: { type: String, default: 'card' },
+    // Dashi's "More featured articles" shows featured cards with no label.
+    withLabel: { type: Boolean, default: true },
   },
   computed: {
     base: () => 'group relative flex rounded-[22px] transition duration-300 in-[.views-row]:h-full flex-col text-left cursor-pointer motion-safe:hover:scale-103',

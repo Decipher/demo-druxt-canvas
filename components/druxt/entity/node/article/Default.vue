@@ -2,21 +2,8 @@
   <section class="@container relative mx-auto flex flex-col items-stretch mt-0 mb-0 pt-4 pb-6 md:pb-7 xl:pb-8 text-foreground cq-full">
     <div class="container mx-auto px-4 [&_.cq-full]:mx-0 [&_.cq-full]:w-full">
       <div class="@container relative mx-auto flex flex-col items-stretch lg:max-w-full">
-        <div class="grid w-full min-w-0 gap-4 @sm:gap-6 @3xl:gap-8 grid-cols-1">
-          <nav aria-label="breadcrumb" class="container mx-auto my-2 w-full md:my-3 2xl:my-4">
-            <ol class="m-0 flex list-none flex-row items-center gap-1 p-0 font-body leading-none text-foreground md:gap-2">
-              <li class="gap-1 md:gap-2 2xl:text-base">
-                <NuxtLink to="/" class="flex items-center no-underline hover:opacity-80">
-                  <svg viewBox="0 0 256 256" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M219.31,108.68l-80-80a16,16,0,0,0-22.62,0l-80,80A15.87,15.87,0,0,0,32,120v96a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V160h32v56a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V120A15.87,15.87,0,0,0,219.31,108.68ZM208,208H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48V120l80-80,80,80Z" /></svg>
-                  <span class="sr-only">Home</span>
-                </NuxtLink>
-              </li>
-              <li aria-hidden="true"><svg viewBox="0 0 256 256" width="20" height="20" fill="currentColor"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z" /></svg></li>
-              <li class="flex items-center text-sm md:text-md"><NuxtLink to="/articles" class="no-underline hover:underline hover:underline-offset-2">Articles</NuxtLink></li>
-              <li aria-hidden="true"><svg viewBox="0 0 256 256" width="20" height="20" fill="currentColor"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z" /></svg></li>
-              <li class="flex items-center text-sm md:text-md active" aria-current="page">{{ a.title }}</li>
-            </ol>
-          </nav>
+        <div class="grid w-full min-w-0 gap-4 @sm:gap-6 @3xl:gap-8 [&>*]:w-full [&>*]:min-w-0 [&_.view-content]:grid [&_.view-content]:w-full [&_.view-content]:min-w-0 [&_.view-content]:gap-4 [&_.view-content]:md:gap-6 [&_.view-content]:xl:gap-8 grid-cols-1">
+          <DruxtBreadcrumb />
           <section>
             <div class="relative mx-auto flex flex-col items-stretch lg:max-w-full">
               <div class="grid w-full min-w-0 gap-4 @sm:gap-6 @3xl:gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
@@ -31,8 +18,9 @@
                   <figure class="w-full">
                     <div class="cq-full w-full aspect-16/9 overflow-hidden rounded-xl md:rounded-2xl"><DashiImage :media="media" /></div>
                   </figure>
-                  <div class="font-body [&_h2]:mt-8 [&_h2]:mb-6 [&_h3]:mt-6 [&_h3]:mb-4 [&_li]:mb-1 [&_ol]:my-4 [&_ol]:list-decimal [&_ul]:my-4 [&>*:first-child]:mt-0 [&>*:last-child]:mb-0 [&_a]:underline [&_a]:underline-offset-2" v-html="body" />
+                  <div class="font-body [&_h2]:mt-8 [&_h2]:mb-6 [&_h3]:mt-6 [&_h3]:mb-4 [&_h4]:mt-4 [&_h4]:mb-2 [&_h5]:my-2 [&_h6]:my-2 [&_li]:mb-1 [&_ol]:my-4 [&_ol]:list-decimal [&_ul]:my-4 [&>*:first-child]:mt-0 [&>*:last-child]:mb-0 [&_a]:underline [&_a]:underline-offset-2 [&_table]:my-6 [&_td]:p-3 [&_th]:p-3 [&_tr]:border-b [&_tr]:border-b-border/40 [&_blockquote]:xl:3xl [&_blockquote]:text-xl [&_blockquote]:italic [&_blockquote]:md:text-2xl [&_blockquote]:my-8 [&_blockquote]:border-l-4 [&_blockquote]:border-border/40 [&_blockquote]:pl-4 [&_figure]:my-6 [&_figure]:w-fit [&_figcaption]:block [&_figcaption]:pt-2 [&_figcaption]:pb-3 [&_figcaption]:text-sm [&_figcaption]:opacity-80 [&_figcaption]:lg:text-base text-foreground [&_a]:hover:text-foreground/70 text-base leading-relaxed xl:text-lg" v-html="body" />
                 </div>
+                <DashiMoreArticles :article="entity" />
               </div>
             </div>
           </section>
@@ -49,8 +37,6 @@ import { featuredMedia } from '~/lib/dashi'
 const ordinal = (day) => `${day}${[, 'st', 'nd', 'rd'][(day % 100 >> 3) ^ 1 && day % 10] || 'th'}`
 
 // An article's own page, as Dashi's article content template lays it out.
-// Dashi's "More featured articles" is left out: its view answers JSON:API
-// with an error, on Drupal as on the mock.
 export default {
   mixins: [DruxtEntityMixin],
   data: () => ({ author: '' }),

@@ -44,8 +44,9 @@ NODE_OPTIONS=--openssl-legacy-provider npm start
 Dashi shows its recipes and articles through Canvas content templates, which
 Druxt doesn't read yet. So the card, hero and node page wrappers read each
 node's fields themselves. Two of Dashi's views, related recipes and more
-featured articles, answer JSON:API with an error on Dashi's own Drupal, so
-those pages leave them out.
+featured articles, answer JSON:API with an error on Dashi's own Drupal. Their
+wrappers ask JSON:API for the same nodes with a filter and a sort instead, and
+get the ones Dashi shows.
 
 ## Point it at a real Drupal
 
