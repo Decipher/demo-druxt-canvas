@@ -8,7 +8,7 @@
           <p v-if="text" class="m-0 max-w-md text-sm leading-relaxed opacity-90">{{ text }}</p>
         </div>
       </div>
-      <NuxtLink v-if="linkLabel" :to="url" class="group flex items-center justify-center transition duration-300 ease-in-out rounded-full leading-tight font-medium cursor-pointer no-underline hover:no-underline gap-2 px-5 py-2 text-md xl:py-3 xl:text-lg bg-primary-foreground text-primary hover:text-primary/80 w-fit flex-row-reverse">{{ linkLabel }}</NuxtLink>
+      <NuxtLink v-if="linkLabel" :to="url" class="group flex items-center justify-center transition duration-300 ease-in-out rounded-full leading-tight font-medium cursor-pointer no-underline hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary disabled:pointer-events-none disabled:opacity-50 gap-2 px-5 py-2 text-md xl:py-3 xl:text-lg bg-primary-foreground text-primary hover:text-primary/80 w-fit flex-row-reverse">{{ linkLabel }}</NuxtLink>
     </section>
   </div>
 </template>
