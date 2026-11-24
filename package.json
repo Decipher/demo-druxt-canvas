@@ -1,0 +1,25 @@
+{
+  "name": "demo-druxt-canvas",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "mock": "decoupled-drupal-mock-dashi --port 3005",
+    "start": "concurrently -k -n mock,nuxt \"npm:mock\" \"npm:dev\""
+  },
+  "dependencies": {
+    "@druxt-contrib/canvas": "0.1.0",
+    "druxt-site": "0.15.2",
+    "nuxt": "2.18.1"
+  },
+  "devDependencies": {
+    "concurrently": "9.1.2",
+    "decoupled-drupal-mock": "1.0.0-alpha.4",
+    "decoupled-drupal-mock-dashi": "1.0.0-alpha.4"
+  },
+  "overrides": {
+    "webpack": "4.47.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
